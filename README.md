@@ -1,25 +1,51 @@
-# OXCODE CATACLYSM — WEBFALL Challenge Landing Page
+# CATACLYSM // WEBFALL
 
-A completely separate challenge page with a comic-book / web-slinger visual language:
-- red/black cinematic palette
-- animated web canvas
-- original masked web-slinger silhouette
-- city grid and moon
-- terminal-style challenge interface
-- interactive intel cards
-- signal/decryption interaction
-- responsive layout
+Hard web CTF challenge.
 
-The artwork is CSS-generated and intentionally uses an original masked web-slinger archetype rather than reproducing a specific copyrighted character.
+## Local setup
 
-## Run
+Requires Node.js 18+.
 
-python3 -m http.server 8080
+```bash
+npm install
+REAL_FLAG='OXCODE{your_real_flag_here}' WEBFALL_TOKEN='webfall' npm start
+```
 
-Open http://localhost:8080/
+Open `http://localhost:3000`.
 
-## Integrating with the CTF
+On Windows PowerShell:
 
-Replace the `ENTER THE WEB` button target with the deployed challenge URL, or wire it to your CTF platform.
+```powershell
+$env:REAL_FLAG="OXCODE{your_real_flag_here}"
+$env:WEBFALL_TOKEN="webfall"
+npm start
+```
 
-Keep all challenge secrets and server-side logic outside this public directory.
+## Render
+
+Create a **Web Service**, not a Static Site.
+
+- Build Command: `npm install`
+- Start Command: `npm start`
+- Environment variables:
+  - `REAL_FLAG` = your actual competition flag
+  - `WEBFALL_TOKEN` = `webfall` (or change it)
+
+Never commit the real flag or `.env` file.
+
+## Intended solve path
+
+This is deliberately a reconnaissance-heavy prototype-pollution challenge.
+
+A clean intended route is:
+
+1. Inspect the public site and discover `robots.txt`.
+2. Follow the hidden archive path.
+3. Decode the Base64 relay labels.
+4. Discover the JSON merge endpoint.
+5. Identify that the merge is vulnerable to `__proto__`.
+6. Confirm the inherited property through the diagnostic endpoint.
+7. Decode the final node and token.
+8. Access the final node after pollution.
+
+The final flag is read only from `REAL_FLAG` on the server.

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>CATACLYSM // WEBFALL</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <canvas id="web"></canvas>
+  <div class="scanlines"></div>
+
+  <header>
+    <div class="brand">CATACLYSM <span>// WEBFALL</span></div>
+    <div class="status"><i></i> RELAY ONLINE</div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="moon"></div>
+      <div class="city"></div>
+      <div class="silhouette" aria-hidden="true">
+        <div class="head"></div>
+        <div class="body"></div>
+        <div class="arm left"></div>
+        <div class="arm right"></div>
+        <div class="leg left"></div>
+        <div class="leg right"></div>
+      </div>
+
+      <div class="hero-copy">
+        <p class="eyebrow">INCIDENT 07 // NETWORK COLLAPSE</p>
+        <h1>THE WEB<br><em>IS FALLING.</em></h1>
+        <p class="sub">
+          Something is moving through the relay layer. The public interface
+          reports nominal status. The old diagnostics disagree.
+        </p>
+        <button id="enter">ENTER THE WEB</button>
+      </div>
+    </section>
+
+    <section class="console">
+      <div class="panel">
+        <div class="panel-title">LIVE RELAY</div>
+        <pre id="terminal">$ connect webfall
+> handshake .......... OK
+> public node ......... WF/7
+> relay state ......... NOMINAL
+> hidden channels ..... UNKNOWN
+> waiting for input...</pre>
+      </div>
+
+      <div class="cards">
+        <article>
+          <span>01</span>
+          <h2>THREAD</h2>
+          <p>Every relay leaves a trace. Not every trace is visible.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h2>ARCHIVE</h2>
+          <p>Old systems are rarely removed. They are merely forgotten.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h2>NODE</h2>
+          <p>The final gate does not trust what you send it. It trusts what it inherits.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>CATACLYSM // OXCODE // WEBFALL-7</footer>
+  <script src="/app.js"></script>
+</body>
+</html>
